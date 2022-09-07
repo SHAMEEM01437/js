@@ -100,12 +100,48 @@ function getCodeBoxElement(index) {
 
 
 //add input tag here 
+//add input tag here 
 
 
-let inputTagContainer = document.getElementsByClassName('inputTag')[0];
-let inputTag = document.getElementById('input_Tag');
-let valI = inputTag.value
-let span = document.createElement("span");
-span.innerHTML = valI;
-span.style.cssText = "padding:10px; background:red;border-radius:2px;";
-inputTagContainer.prepend(span);
+var close = document.getElementsByClassName("clistList");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.remove();
+  }
+}
+
+function add(){
+  let inpputValue = document.getElementById('input_Tag').value;
+  let inputtext = document.createTextNode(inpputValue)
+  let oddList = document.getElementsByClassName('odd-list')[0];
+  let li = document.createElement('li');
+  let closeSpan = document.createElement('span');
+  closeSpan.innerHTML = "&#10006";
+  closeSpan.setAttribute("class", "clistList");
+  li.appendChild(closeSpan);
+  li.appendChild(inputtext);
+  oddList.appendChild(li);
+  if(inpputValue === ""){
+    alert('this')
+  }else{
+    oddList.appendChild(li);
+  }
+  document.getElementById('input_Tag').value ='';
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+    div.remove();
+    }
+  }
+}
+
+let inpputValuet = document.getElementById('input_Tag');
+inpputValuet.addEventListener('keypress', function(event) {
+  if(event.key === "Enter"){
+    event.preventDefault();
+    document.getElementById('addList').click()
+  }
+})
