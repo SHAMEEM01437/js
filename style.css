@@ -320,16 +320,18 @@ Animated Heading
 /* ------------------------------------------------------------------------------------------------
 Animated Heading 
 -------------------------------------------------------------------------------------------------- */
-form.inputTag {
-    background:#fff;
-    margin-top: 10px;
-    padding: 10px;
+.inputTag {
+  background:#fff;
+  margin-top: 10px;
+  /* padding: 10px; */
+  display: flex;
+  align-items: center;
 }
-form.inputTag input{
+.inputTag input{
     padding:10px;
     border:none;
 }
-form.inputTag input:focus{
+.inputTag input:focus{
     outline:none;
 }
 span#addList {
