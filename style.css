@@ -332,3 +332,25 @@ form.inputTag input{
 form.inputTag input:focus{
     outline:none;
 }
+span#addList {
+  background: #fa7503;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+ul.odd-list{
+  list-style:none;
+  
+}
+
+ul.odd-list li{
+  padding:10px;
+  position:relative;
+  background:#fa7503;
+}
+ul.odd-list li:nth-child(2n){
+  background:#fff;
+}
+span.clistList {
+  position: absolute;
+  right: 15px;
+}
